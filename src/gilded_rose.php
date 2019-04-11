@@ -59,6 +59,7 @@ class GildedRose {
     }
 }
 
+// Do not change anything here because of Goblin !!
 class Item {
 
     public $name;
