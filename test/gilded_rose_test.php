@@ -37,21 +37,21 @@ class GildedRoseTest extends TestCase {
             $gildedRose = new GildedRose($items);
             $gildedRose->update_quality();
             $expectedItem = new Item('Backstage passes to a TAFKAL80ETC concert', 9, 51);
-            $this->assertEquals($expectedItem, $items[0], 'Backstage passes quality should increase by 2, when it\'s less than 10 && more than 5 days left.');
+            $this->assertEquals($expectedItem, $items[0], '"Backstage passes" quality should increase by 2, when it\'s less than 10 && more than 5 days left.');
         }
         function testBackstagePasses3() {
             $items = array(new Item('Backstage passes to a TAFKAL80ETC concert', 5, 49));
             $gildedRose = new GildedRose($items);
             $gildedRose->update_quality();
             $expectedItem = new Item('Backstage passes to a TAFKAL80ETC concert', 4, 52);
-            $this->assertEquals($expectedItem, $items[0], 'Backstage passes quality should increase by 3, when it\'s less than 5 days left.');
+            $this->assertEquals($expectedItem, $items[0], '"Backstage passes" quality should increase by 3, when it\'s less than 5 days left.');
         }
         function testBackstagePasses0() {
             $items = array(new Item('Backstage passes to a TAFKAL80ETC concert', 0, 49));
             $gildedRose = new GildedRose($items);
             $gildedRose->update_quality();
             $expectedItem = new Item('Backstage passes to a TAFKAL80ETC concert', -1, 0);
-            $this->assertEquals($expectedItem, $items[0], 'Backstage passes quality should drop to 0 after the concert');
+            $this->assertEquals($expectedItem, $items[0], '"Backstage passes" quality should drop to 0 after the concert');
         }
 
         /** Sulfuras Item */
